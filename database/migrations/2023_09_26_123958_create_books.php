@@ -13,9 +13,9 @@ return new class extends Migration
     {
         Schema::create('books', function (Blueprint $table) {
             $table->id();
-            $table->string('isbn_code');
-            $table->string('title');
-            $table->boolean('available');
+            $table->string('isbn_code')->nullable();
+            $table->string('title')->nullable();
+            $table->boolean('available')->nullable();
             // TODO catagory table either string or array
             // $table->timestamps();
         });

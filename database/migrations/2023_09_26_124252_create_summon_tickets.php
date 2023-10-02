@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('summon_tickets', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('issued_from')->nullable();
+            $table->unsignedBigInteger('issued_to')->nullable();
+            $table->integer('amoount');
+            $table->boolean('cleared');
             $table->timestamps();
         });
     }

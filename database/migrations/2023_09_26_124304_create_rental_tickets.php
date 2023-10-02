@@ -13,6 +13,11 @@ return new class extends Migration
     {
         Schema::create('rental_tickets', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('book_id')->nullable();
+            $table->unsignedBigInteger('acquired_by')->nullable();
+            $table->dateTime('started_at')->nullable();
+            $table->dateTime('ended_at')->nullable();
+            $table->boolean('summon_issued')->nullable();
             $table->timestamps();
         });
     }
